@@ -9,15 +9,15 @@ import Combine
 import Foundation
 
 class CryptoListVM {
-    private var allCoins: [CryptoCoin] = []
-    private(set) var filteredCoins: [CryptoCoin] = []
+    private var allCryptoCoins: [CryptoCoin] = []
+    private(set) var filteredCryptoCoins: [CryptoCoin] = []
 
-    private var coinsServiceType: CoinsServiceType
+    private var cyrptoCoinsServiceType: CryptoCoinsServiceType
     private var output: PassthroughSubject<Output, Never> = .init()
     private var cancellables = Set<AnyCancellable>()
         
-    init(coinsServiceType: CoinsServiceType = CoinsService()) {
-        self.coinsServiceType = coinsServiceType
+    init(cyrptoCoinsServiceType: CryptoCoinsServiceType = CryptoCoinsService()) {
+        self.cyrptoCoinsServiceType = cyrptoCoinsServiceType
     }
 }
 
@@ -61,10 +61,10 @@ extension CryptoListVM {
     
     private func handleGetCryptoCoins() {
         Task {
-            switch await coinsServiceType.getCoins() {
+            switch await cyrptoCoinsServiceType.getCoins() {
             case .success(let coins):
-                self.allCoins = coins
-                self.filteredCoins = self.allCoins
+                self.allCryptoCoins = coins
+                self.filteredCryptoCoins = self.allCryptoCoins
                 output.send(.fetchCoinsSuceeded)
                 
             case .failure(let error):
@@ -75,9 +75,9 @@ extension CryptoListVM {
     
     private func search(by query: String) {
         if query.isEmpty {
-            filteredCoins = allCoins
+            filteredCryptoCoins = allCryptoCoins
         } else {
-            filteredCoins = allCoins.filter { coin in
+            filteredCryptoCoins = allCryptoCoins.filter { coin in
                 coin.name.lowercased().contains(query.lowercased()) ||
                 coin.symbol.lowercased().contains(query.lowercased())
             }
@@ -87,7 +87,7 @@ extension CryptoListVM {
     }
     
     private func applyFilters(isActive: Bool?, type: CoinType?, isNew: Bool?) {
-        filteredCoins = allCoins.filter { coin in
+        filteredCryptoCoins = allCryptoCoins.filter { coin in
             let matchesActive = isActive == nil || coin.isActive == isActive
             let matchesType = type == nil || coin.type == type
             let matchesNew = isNew == nil || coin.isNew == isNew

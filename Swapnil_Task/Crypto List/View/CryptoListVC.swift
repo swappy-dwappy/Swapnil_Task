@@ -102,14 +102,14 @@ extension CryptoListVC {
 //MARK: UITableView
 extension CryptoListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.filteredCoins.count
+        return viewModel.filteredCryptoCoins.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CryptoCoinTVCell.reuseIdentifier, for: indexPath) as? CryptoCoinTVCell else {
             return UITableViewCell()
         }
-        let coin = viewModel.filteredCoins[indexPath.row]
+        let coin = viewModel.filteredCryptoCoins[indexPath.row]
         cell.configure(with: coin)
         return cell
     }

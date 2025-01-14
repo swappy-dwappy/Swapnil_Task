@@ -1,5 +1,5 @@
 //
-//  CoinsService.swift
+//  CryptoCoinsService.swift
 //  Swapnil_Task
 //
 //  Created by Sonkar, Swapnil on 11/01/25.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CoinsService: NetworkManager, CoinsServiceType {
+class CryptoCoinsService: NetworkManager, CryptoCoinsServiceType {
     
     func getCoins() async -> Result<[CryptoCoin], Error> {
         do {
