@@ -77,6 +77,7 @@ class CryptoListVC: UIViewController {
     }
 }
 
+//MARK: Binding
 extension CryptoListVC {
     private func bind() {
         let output = viewModel.transform(input: input.eraseToAnyPublisher())
@@ -98,6 +99,7 @@ extension CryptoListVC {
     }
 }
 
+//MARK: UITableView
 extension CryptoListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.filteredCoins.count
@@ -113,6 +115,7 @@ extension CryptoListVC: UITableViewDataSource {
     }
 }
 
+//MARK: Search
 extension CryptoListVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let query = searchController.searchBar.text else { return }

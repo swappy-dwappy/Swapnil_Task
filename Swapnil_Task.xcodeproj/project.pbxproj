@@ -153,6 +153,7 @@
 				0A9D7EEC2D3218D700098730 /* SceneDelegate.swift */,
 				0A9D7F232D33E18800098730 /* Crypto List */,
 				0A9D7F3C2D35EB4300098730 /* Networking */,
+				0A9D7F632D370E4D00098730 /* Utility */,
 				0A9D7EF32D3218D900098730 /* Assets.xcassets */,
 				0A9D7EF52D3218D900098730 /* LaunchScreen.storyboard */,
 				0A9D7EF82D3218D900098730 /* Info.plist */,
@@ -271,6 +272,13 @@
 				0A9D7F5C2D36223D00098730 /* CoinsServiceType.swift */,
 			);
 			path = "Coins Service";
+			sourceTree = "<group>";
+		};
+		0A9D7F632D370E4D00098730 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
