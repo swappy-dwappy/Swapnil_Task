@@ -9,13 +9,47 @@
 /* Begin PBXBuildFile section */
 		0A9D7EEB2D3218D700098730 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7EEA2D3218D700098730 /* AppDelegate.swift */; };
 		0A9D7EED2D3218D700098730 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7EEC2D3218D700098730 /* SceneDelegate.swift */; };
-		0A9D7EEF2D3218D700098730 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7EEE2D3218D700098730 /* ViewController.swift */; };
-		0A9D7EF22D3218D700098730 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7EF12D3218D700098730 /* Base */; };
 		0A9D7EF42D3218D900098730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7EF32D3218D900098730 /* Assets.xcassets */; };
 		0A9D7EF72D3218D900098730 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7EF62D3218D900098730 /* Base */; };
 		0A9D7F022D3218D900098730 /* Swapnil_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F012D3218D900098730 /* Swapnil_TaskTests.swift */; };
 		0A9D7F0C2D3218D900098730 /* Swapnil_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F0B2D3218D900098730 /* Swapnil_TaskUITests.swift */; };
 		0A9D7F0E2D3218D900098730 /* Swapnil_TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F0D2D3218D900098730 /* Swapnil_TaskUITestsLaunchTests.swift */; };
+		0A9D7F1B2D33E13200098730 /* CryptoCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F1A2D33E13200098730 /* CryptoCoin.swift */; };
+		0A9D7F1C2D33E13200098730 /* CryptoCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F1A2D33E13200098730 /* CryptoCoin.swift */; };
+		0A9D7F202D33E17700098730 /* CryptoListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F1F2D33E17700098730 /* CryptoListVM.swift */; };
+		0A9D7F212D33E17700098730 /* CryptoListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F1F2D33E17700098730 /* CryptoListVM.swift */; };
+		0A9D7F252D33E28600098730 /* CryptoCoinTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F242D33E28600098730 /* CryptoCoinTVCell.swift */; };
+		0A9D7F262D33E28600098730 /* CryptoCoinTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F242D33E28600098730 /* CryptoCoinTVCell.swift */; };
+		0A9D7F282D33E8C800098730 /* CryptoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F272D33E8C800098730 /* CryptoListVC.swift */; };
+		0A9D7F292D33E8C800098730 /* CryptoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F272D33E8C800098730 /* CryptoListVC.swift */; };
+		0A9D7F3D2D35EB4300098730 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F2A2D35EB4300098730 /* JSONParameterEncoder.swift */; };
+		0A9D7F3E2D35EB4300098730 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F2A2D35EB4300098730 /* JSONParameterEncoder.swift */; };
+		0A9D7F3F2D35EB4300098730 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F2B2D35EB4300098730 /* NetworkError.swift */; };
+		0A9D7F402D35EB4300098730 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F2B2D35EB4300098730 /* NetworkError.swift */; };
+		0A9D7F412D35EB4300098730 /* ParameterEncoderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F2C2D35EB4300098730 /* ParameterEncoderType.swift */; };
+		0A9D7F422D35EB4300098730 /* ParameterEncoderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F2C2D35EB4300098730 /* ParameterEncoderType.swift */; };
+		0A9D7F432D35EB4300098730 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F2D2D35EB4300098730 /* ParameterEncoding.swift */; };
+		0A9D7F442D35EB4300098730 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F2D2D35EB4300098730 /* ParameterEncoding.swift */; };
+		0A9D7F452D35EB4300098730 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F2E2D35EB4300098730 /* URLParameterEncoder.swift */; };
+		0A9D7F462D35EB4300098730 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F2E2D35EB4300098730 /* URLParameterEncoder.swift */; };
+		0A9D7F472D35EB4300098730 /* CoinEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F302D35EB4300098730 /* CoinEndPoint.swift */; };
+		0A9D7F482D35EB4300098730 /* CoinEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F302D35EB4300098730 /* CoinEndPoint.swift */; };
+		0A9D7F4B2D35EB4300098730 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F332D35EB4300098730 /* NetworkManager.swift */; };
+		0A9D7F4C2D35EB4300098730 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F332D35EB4300098730 /* NetworkManager.swift */; };
+		0A9D7F4F2D35EB4300098730 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F362D35EB4300098730 /* EndPointType.swift */; };
+		0A9D7F502D35EB4300098730 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F362D35EB4300098730 /* EndPointType.swift */; };
+		0A9D7F512D35EB4300098730 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F372D35EB4300098730 /* HTTPMethod.swift */; };
+		0A9D7F522D35EB4300098730 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F372D35EB4300098730 /* HTTPMethod.swift */; };
+		0A9D7F532D35EB4300098730 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F382D35EB4300098730 /* HTTPTask.swift */; };
+		0A9D7F542D35EB4300098730 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F382D35EB4300098730 /* HTTPTask.swift */; };
+		0A9D7F552D35EB4300098730 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F392D35EB4300098730 /* Router.swift */; };
+		0A9D7F562D35EB4300098730 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F392D35EB4300098730 /* Router.swift */; };
+		0A9D7F572D35EB4300098730 /* RouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F3A2D35EB4300098730 /* RouterType.swift */; };
+		0A9D7F582D35EB4300098730 /* RouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F3A2D35EB4300098730 /* RouterType.swift */; };
+		0A9D7F5A2D36210E00098730 /* CoinsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F592D36210E00098730 /* CoinsService.swift */; };
+		0A9D7F5B2D36210E00098730 /* CoinsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F592D36210E00098730 /* CoinsService.swift */; };
+		0A9D7F5D2D36223D00098730 /* CoinsServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F5C2D36223D00098730 /* CoinsServiceType.swift */; };
+		0A9D7F5E2D36223D00098730 /* CoinsServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F5C2D36223D00098730 /* CoinsServiceType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +73,6 @@
 		0A9D7EE72D3218D700098730 /* Swapnil_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swapnil_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9D7EEA2D3218D700098730 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A9D7EEC2D3218D700098730 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0A9D7EEE2D3218D700098730 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0A9D7EF12D3218D700098730 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A9D7EF32D3218D900098730 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9D7EF62D3218D900098730 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9D7EF82D3218D900098730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +81,24 @@
 		0A9D7F072D3218D900098730 /* Swapnil_TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swapnil_TaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9D7F0B2D3218D900098730 /* Swapnil_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swapnil_TaskUITests.swift; sourceTree = "<group>"; };
 		0A9D7F0D2D3218D900098730 /* Swapnil_TaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swapnil_TaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0A9D7F1A2D33E13200098730 /* CryptoCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCoin.swift; sourceTree = "<group>"; };
+		0A9D7F1F2D33E17700098730 /* CryptoListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListVM.swift; sourceTree = "<group>"; };
+		0A9D7F242D33E28600098730 /* CryptoCoinTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCoinTVCell.swift; sourceTree = "<group>"; };
+		0A9D7F272D33E8C800098730 /* CryptoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListVC.swift; sourceTree = "<group>"; };
+		0A9D7F2A2D35EB4300098730 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		0A9D7F2B2D35EB4300098730 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		0A9D7F2C2D35EB4300098730 /* ParameterEncoderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoderType.swift; sourceTree = "<group>"; };
+		0A9D7F2D2D35EB4300098730 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		0A9D7F2E2D35EB4300098730 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		0A9D7F302D35EB4300098730 /* CoinEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinEndPoint.swift; sourceTree = "<group>"; };
+		0A9D7F332D35EB4300098730 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0A9D7F362D35EB4300098730 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		0A9D7F372D35EB4300098730 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		0A9D7F382D35EB4300098730 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		0A9D7F392D35EB4300098730 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		0A9D7F3A2D35EB4300098730 /* RouterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterType.swift; sourceTree = "<group>"; };
+		0A9D7F592D36210E00098730 /* CoinsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsService.swift; sourceTree = "<group>"; };
+		0A9D7F5C2D36223D00098730 /* CoinsServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsServiceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +151,8 @@
 			children = (
 				0A9D7EEA2D3218D700098730 /* AppDelegate.swift */,
 				0A9D7EEC2D3218D700098730 /* SceneDelegate.swift */,
-				0A9D7EEE2D3218D700098730 /* ViewController.swift */,
-				0A9D7EF02D3218D700098730 /* Main.storyboard */,
+				0A9D7F232D33E18800098730 /* Crypto List */,
+				0A9D7F3C2D35EB4300098730 /* Networking */,
 				0A9D7EF32D3218D900098730 /* Assets.xcassets */,
 				0A9D7EF52D3218D900098730 /* LaunchScreen.storyboard */,
 				0A9D7EF82D3218D900098730 /* Info.plist */,
@@ -125,6 +175,102 @@
 				0A9D7F0D2D3218D900098730 /* Swapnil_TaskUITestsLaunchTests.swift */,
 			);
 			path = Swapnil_TaskUITests;
+			sourceTree = "<group>";
+		};
+		0A9D7F1D2D33E13800098730 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7F1A2D33E13200098730 /* CryptoCoin.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A9D7F1E2D33E14300098730 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7F272D33E8C800098730 /* CryptoListVC.swift */,
+				0A9D7F242D33E28600098730 /* CryptoCoinTVCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A9D7F222D33E17C00098730 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7F1F2D33E17700098730 /* CryptoListVM.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		0A9D7F232D33E18800098730 /* Crypto List */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7F222D33E17C00098730 /* View Model */,
+				0A9D7F1E2D33E14300098730 /* View */,
+				0A9D7F1D2D33E13800098730 /* Model */,
+			);
+			path = "Crypto List";
+			sourceTree = "<group>";
+		};
+		0A9D7F2F2D35EB4300098730 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7F2A2D35EB4300098730 /* JSONParameterEncoder.swift */,
+				0A9D7F2B2D35EB4300098730 /* NetworkError.swift */,
+				0A9D7F2C2D35EB4300098730 /* ParameterEncoderType.swift */,
+				0A9D7F2D2D35EB4300098730 /* ParameterEncoding.swift */,
+				0A9D7F2E2D35EB4300098730 /* URLParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		0A9D7F322D35EB4300098730 /* End Point */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7F302D35EB4300098730 /* CoinEndPoint.swift */,
+			);
+			path = "End Point";
+			sourceTree = "<group>";
+		};
+		0A9D7F342D35EB4300098730 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7F332D35EB4300098730 /* NetworkManager.swift */,
+				0A9D7F5F2D36225500098730 /* Coins Service */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0A9D7F3B2D35EB4300098730 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7F362D35EB4300098730 /* EndPointType.swift */,
+				0A9D7F372D35EB4300098730 /* HTTPMethod.swift */,
+				0A9D7F382D35EB4300098730 /* HTTPTask.swift */,
+				0A9D7F392D35EB4300098730 /* Router.swift */,
+				0A9D7F3A2D35EB4300098730 /* RouterType.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0A9D7F3C2D35EB4300098730 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7F2F2D35EB4300098730 /* Encoding */,
+				0A9D7F322D35EB4300098730 /* End Point */,
+				0A9D7F342D35EB4300098730 /* Manager */,
+				0A9D7F3B2D35EB4300098730 /* Service */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		0A9D7F5F2D36225500098730 /* Coins Service */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7F592D36210E00098730 /* CoinsService.swift */,
+				0A9D7F5C2D36223D00098730 /* CoinsServiceType.swift */,
+			);
+			path = "Coins Service";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +379,6 @@
 			files = (
 				0A9D7EF42D3218D900098730 /* Assets.xcassets in Resources */,
 				0A9D7EF72D3218D900098730 /* Base in Resources */,
-				0A9D7EF22D3218D700098730 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +403,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A9D7EEF2D3218D700098730 /* ViewController.swift in Sources */,
+				0A9D7F4F2D35EB4300098730 /* EndPointType.swift in Sources */,
+				0A9D7F5A2D36210E00098730 /* CoinsService.swift in Sources */,
+				0A9D7F1B2D33E13200098730 /* CryptoCoin.swift in Sources */,
+				0A9D7F572D35EB4300098730 /* RouterType.swift in Sources */,
+				0A9D7F452D35EB4300098730 /* URLParameterEncoder.swift in Sources */,
+				0A9D7F412D35EB4300098730 /* ParameterEncoderType.swift in Sources */,
+				0A9D7F432D35EB4300098730 /* ParameterEncoding.swift in Sources */,
+				0A9D7F3F2D35EB4300098730 /* NetworkError.swift in Sources */,
+				0A9D7F5D2D36223D00098730 /* CoinsServiceType.swift in Sources */,
+				0A9D7F552D35EB4300098730 /* Router.swift in Sources */,
 				0A9D7EEB2D3218D700098730 /* AppDelegate.swift in Sources */,
+				0A9D7F202D33E17700098730 /* CryptoListVM.swift in Sources */,
 				0A9D7EED2D3218D700098730 /* SceneDelegate.swift in Sources */,
+				0A9D7F252D33E28600098730 /* CryptoCoinTVCell.swift in Sources */,
+				0A9D7F3D2D35EB4300098730 /* JSONParameterEncoder.swift in Sources */,
+				0A9D7F532D35EB4300098730 /* HTTPTask.swift in Sources */,
+				0A9D7F512D35EB4300098730 /* HTTPMethod.swift in Sources */,
+				0A9D7F4B2D35EB4300098730 /* NetworkManager.swift in Sources */,
+				0A9D7F282D33E8C800098730 /* CryptoListVC.swift in Sources */,
+				0A9D7F472D35EB4300098730 /* CoinEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +430,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9D7F542D35EB4300098730 /* HTTPTask.swift in Sources */,
+				0A9D7F442D35EB4300098730 /* ParameterEncoding.swift in Sources */,
+				0A9D7F422D35EB4300098730 /* ParameterEncoderType.swift in Sources */,
+				0A9D7F582D35EB4300098730 /* RouterType.swift in Sources */,
 				0A9D7F022D3218D900098730 /* Swapnil_TaskTests.swift in Sources */,
+				0A9D7F562D35EB4300098730 /* Router.swift in Sources */,
+				0A9D7F4C2D35EB4300098730 /* NetworkManager.swift in Sources */,
+				0A9D7F402D35EB4300098730 /* NetworkError.swift in Sources */,
+				0A9D7F262D33E28600098730 /* CryptoCoinTVCell.swift in Sources */,
+				0A9D7F3E2D35EB4300098730 /* JSONParameterEncoder.swift in Sources */,
+				0A9D7F502D35EB4300098730 /* EndPointType.swift in Sources */,
+				0A9D7F482D35EB4300098730 /* CoinEndPoint.swift in Sources */,
+				0A9D7F5E2D36223D00098730 /* CoinsServiceType.swift in Sources */,
+				0A9D7F212D33E17700098730 /* CryptoListVM.swift in Sources */,
+				0A9D7F522D35EB4300098730 /* HTTPMethod.swift in Sources */,
+				0A9D7F1C2D33E13200098730 /* CryptoCoin.swift in Sources */,
+				0A9D7F462D35EB4300098730 /* URLParameterEncoder.swift in Sources */,
+				0A9D7F292D33E8C800098730 /* CryptoListVC.swift in Sources */,
+				0A9D7F5B2D36210E00098730 /* CoinsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +477,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0A9D7EF02D3218D700098730 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A9D7EF12D3218D700098730 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0A9D7EF52D3218D900098730 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,10 +619,9 @@
 				INFOPLIST_FILE = Swapnil_Task/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,10 +647,9 @@
 				INFOPLIST_FILE = Swapnil_Task/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
