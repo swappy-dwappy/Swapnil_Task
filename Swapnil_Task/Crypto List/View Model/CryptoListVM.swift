@@ -26,7 +26,7 @@ extension CryptoListVM {
     enum Input {
         case viewDidAppear
         case filterSearch(searchText: String)
-        case applyFilters(isActive: Bool?, type: String?, isNew: Bool?)
+        case applyFilters(isActive: Bool?, type: CoinType?, isNew: Bool?)
     }
     
     enum Output {
@@ -86,7 +86,7 @@ extension CryptoListVM {
         output.send(.filteredSearch)
     }
     
-    private func applyFilters(isActive: Bool?, type: String?, isNew: Bool?) {
+    private func applyFilters(isActive: Bool?, type: CoinType?, isNew: Bool?) {
         filteredCoins = allCoins.filter { coin in
             let matchesActive = isActive == nil || coin.isActive == isActive
             let matchesType = type == nil || coin.type == type

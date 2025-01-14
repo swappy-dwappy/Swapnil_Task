@@ -25,6 +25,7 @@ class CryptoCoinTVCell: UITableViewCell {
     }
     
     private func setupUI() {
+        self.selectionStyle = .none
         nameLabel.font = .boldSystemFont(ofSize: 16)
         symbolLabel.font = .systemFont(ofSize: 14)
         symbolLabel.textColor = .gray
@@ -48,7 +49,7 @@ class CryptoCoinTVCell: UITableViewCell {
     func configure(with coin: CryptoCoin) {
         nameLabel.text = coin.name
         symbolLabel.text = coin.symbol
-        typeLabel.text = coin.type
+        typeLabel.text = coin.type.rawValue
         contentView.alpha = coin.isActive ? 1.0 : 0.5
     }
 }

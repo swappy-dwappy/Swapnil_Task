@@ -7,10 +7,15 @@
 
 import Foundation
 
+enum CoinType: String, Codable {
+    case token
+    case coin
+}
+
 struct CryptoCoin: Codable {
     let name: String
     let symbol: String
-    let type: String
+    let type: CoinType
     let isActive: Bool
     let isNew: Bool
 

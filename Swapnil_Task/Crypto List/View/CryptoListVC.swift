@@ -61,7 +61,7 @@ class CryptoListVC: UIViewController {
 
         // Filter by Type (Example: "token")
         alert.addAction(UIAlertAction(title: "Type: Token", style: .default, handler: { _ in
-            self.input.send(.applyFilters(isActive: nil, type: "token", isNew: nil))
+            self.input.send(.applyFilters(isActive: nil, type: .token, isNew: nil))
         }))
 
         // Filter by New
