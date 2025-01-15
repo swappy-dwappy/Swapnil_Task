@@ -11,6 +11,8 @@ import Foundation
 class CryptoListVM {
     private var allCryptoCoins: [CryptoCoin] = []
     private(set) var filteredCryptoCoins: [CryptoCoin] = []
+    private(set) var searchedCryptoCoins: [CryptoCoin] = []
+    var filterButtons: FilterButtons = FilterButtons()
 
     private var cyrptoCoinsServiceType: CryptoCoinsServiceType
     private var output: PassthroughSubject<Output, Never> = .init()
@@ -21,12 +23,50 @@ class CryptoListVM {
     }
 }
 
-// State
+//MARK: FilterButtons
+extension CryptoListVM {
+    struct FilterButtons {
+        var activeCoins = false
+        var inactiveCoins = false
+        var onlyTokens = false
+        var onlyCoins = false
+        var newCoins = false
+        
+        mutating func setState(isActiveCoins: Bool?, isInactiveCoins: Bool?, isOnlyTokens: Bool?,  isOnlyCoins: Bool?, isNewCoins: Bool?) {
+            if let isActiveCoins {
+                activeCoins = isActiveCoins
+            }
+            if let isInactiveCoins {
+                inactiveCoins = isInactiveCoins
+            }
+            if let isOnlyTokens {
+                onlyTokens = isOnlyTokens
+            }
+            if let isOnlyCoins {
+                onlyCoins = isOnlyCoins
+            }
+            if let isNewCoins {
+                newCoins = isNewCoins
+            }
+        }
+        
+        mutating func reset() {
+            activeCoins = false
+            inactiveCoins = false
+            onlyTokens = false
+            onlyCoins = false
+            newCoins = false
+        }
+    }
+}
+
+//MARK: State
 extension CryptoListVM {
     enum Input {
         case viewDidAppear
+        case pullToRefresh
         case filterSearch(searchText: String)
-        case applyFilters(isActive: Bool?, type: CoinType?, isNew: Bool?)
+        case applyFilters(isActiveCoins: Bool?, isInactiveCoins: Bool?, isOnlyTokens: Bool?,  isOnlyCoins: Bool?, isNewCoins: Bool?)
     }
     
     enum Output {
@@ -41,14 +81,14 @@ extension CryptoListVM {
     func transform(input: AnyPublisher<Input, Never>) -> AnyPublisher<Output, Never> {
         input.sink { [weak self] input in
             switch input {
-            case .viewDidAppear:
+            case .viewDidAppear, .pullToRefresh:
                 self?.handleGetCryptoCoins()
                 
             case .filterSearch(let searchText):
                 self?.search(by: searchText)
                 
-            case .applyFilters(let isActive, let type, let isNew):
-                self?.applyFilters(isActive: isActive, type: type, isNew: isNew)
+            case .applyFilters(let isActiveCoins, let isInactiveCoins, let isOnlyTokens, let isOnlyCoins, let isNewCoins):
+                self?.applyFilters(isActiveCoins: isActiveCoins, isInactiveCoins: isInactiveCoins, isOnlyTokens: isOnlyTokens, isOnlyCoins: isOnlyCoins, isNewCoins: isNewCoins)
             }
         }
         .store(in: &cancellables)
@@ -63,21 +103,28 @@ extension CryptoListVM {
         Task {
             switch await cyrptoCoinsServiceType.getCoins() {
             case .success(let coins):
-                self.allCryptoCoins = coins
-                self.filteredCryptoCoins = self.allCryptoCoins
+                reset(with: coins)
                 output.send(.fetchCoinsSuceeded)
                 
             case .failure(let error):
+                reset(with: [])
                 output.send(.fetchCoinsFailed(error: error))
             }
         }
     }
     
+    private func reset(with coins: [CryptoCoin]) {
+        self.allCryptoCoins = coins
+        self.filteredCryptoCoins = coins
+        self.searchedCryptoCoins = coins
+        filterButtons.reset()
+    }
+    
     private func search(by query: String) {
         if query.isEmpty {
-            filteredCryptoCoins = allCryptoCoins
+            searchedCryptoCoins = filteredCryptoCoins
         } else {
-            filteredCryptoCoins = allCryptoCoins.filter { coin in
+            searchedCryptoCoins = filteredCryptoCoins.filter { coin in
                 coin.name.lowercased().contains(query.lowercased()) ||
                 coin.symbol.lowercased().contains(query.lowercased())
             }
@@ -86,13 +133,39 @@ extension CryptoListVM {
         output.send(.filteredSearch)
     }
     
-    private func applyFilters(isActive: Bool?, type: CoinType?, isNew: Bool?) {
-        filteredCryptoCoins = allCryptoCoins.filter { coin in
-            let matchesActive = isActive == nil || coin.isActive == isActive
-            let matchesType = type == nil || coin.type == type
-            let matchesNew = isNew == nil || coin.isNew == isNew
-            return matchesActive && matchesType && matchesNew
+    private func applyFilters(isActiveCoins: Bool?, isInactiveCoins: Bool?, isOnlyTokens: Bool?,  isOnlyCoins: Bool?, isNewCoins: Bool?) {
+        
+        filterButtons.setState(isActiveCoins: isActiveCoins, isInactiveCoins: isInactiveCoins, isOnlyTokens: isOnlyTokens, isOnlyCoins: isOnlyCoins, isNewCoins: isNewCoins)
+        
+        filteredCryptoCoins = allCryptoCoins
+        if filterButtons.activeCoins {
+            filteredCryptoCoins = filteredCryptoCoins.filter { cryptoCoin in
+                cryptoCoin.isActive == true && cryptoCoin.type == .coin
+            }
         }
+        if filterButtons.inactiveCoins {
+            filteredCryptoCoins = filteredCryptoCoins.filter { cryptoCoin in
+                cryptoCoin.isActive == false && cryptoCoin.type == .coin
+            }
+        }
+        if filterButtons.onlyTokens {
+            filteredCryptoCoins = filteredCryptoCoins.filter { cryptoCoin in
+                cryptoCoin.type == .token
+            }
+        }
+        if filterButtons.onlyCoins {
+            filteredCryptoCoins = filteredCryptoCoins.filter { cryptoCoin in
+                cryptoCoin.type == .coin
+            }
+        }
+        if filterButtons.newCoins {
+            filteredCryptoCoins = filteredCryptoCoins.filter { cryptoCoin in
+                cryptoCoin.isNew
+            }
+        }
+        
+        searchedCryptoCoins = filteredCryptoCoins
+
         output.send(.appliedFilters)
     }
 }
