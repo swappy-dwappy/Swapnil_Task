@@ -13,7 +13,8 @@ class CryptoCoinTVCell: UITableViewCell {
     
     private let nameLabel = UILabel()
     private let symbolLabel = UILabel()
-    private let typeLabel = UILabel()
+    private let typeImageView = UIImageView()
+    private let typeIsNewImageView = UIImageView(image: .new)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,30 +27,56 @@ class CryptoCoinTVCell: UITableViewCell {
     
     private func setupUI() {
         self.selectionStyle = .none
-        nameLabel.font = .boldSystemFont(ofSize: 16)
-        symbolLabel.font = .systemFont(ofSize: 14)
-        symbolLabel.textColor = .gray
-        typeLabel.font = .systemFont(ofSize: 14)
-        typeLabel.textColor = .blue
+        nameLabel.textColor = .gray
+        nameLabel.font = .systemFont(ofSize: 16)
+        symbolLabel.font = .boldSystemFont(ofSize: 16)
+        typeImageView.contentMode = .scaleAspectFit
+        typeIsNewImageView.contentMode = .scaleAspectFit
         
-        let stackView = UIStackView(arrangedSubviews: [nameLabel, symbolLabel, typeLabel])
-        stackView.axis = .vertical
-        stackView.spacing = 4
-        contentView.addSubview(stackView)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(symbolLabel)
+        contentView.addSubview(typeIsNewImageView)
+        contentView.addSubview(typeImageView)
         
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        symbolLabel.translatesAutoresizingMaskIntoConstraints = false
+        typeImageView.translatesAutoresizingMaskIntoConstraints = false
+        typeIsNewImageView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            
+            symbolLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
+            symbolLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            symbolLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -8),
+            
+            typeIsNewImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            typeIsNewImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
+            typeIsNewImageView.widthAnchor.constraint(equalToConstant: 32),
+            typeIsNewImageView.heightAnchor.constraint(equalToConstant: 32),
+            
+            typeImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            typeImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            typeImageView.widthAnchor.constraint(equalToConstant: 32),
+            typeImageView.heightAnchor.constraint(equalToConstant: 32)
         ])
     }
     
-    func configure(with coin: CryptoCoin) {
-        nameLabel.text = coin.name
-        symbolLabel.text = coin.symbol
-        typeLabel.text = coin.type.rawValue
-        contentView.alpha = coin.isActive ? 1.0 : 0.5
+    func configure(with cryptoCoin: CryptoCoin) {
+        nameLabel.text = cryptoCoin.name
+        symbolLabel.text = cryptoCoin.symbol
+        typeIsNewImageView.isHidden = !cryptoCoin.isNew
+        setTypeImageView(cryptoCoin)
+    }
+    
+    private func setTypeImageView(_ cryptoCoin: CryptoCoin) {
+        if cryptoCoin.type == .coin, cryptoCoin.isActive {
+            typeImageView.image = .activeCoin
+        } else if cryptoCoin.type == .token, cryptoCoin.isActive {
+            typeImageView.image = .activeToken
+        } else if cryptoCoin.isActive == false {
+            typeImageView.image = .inactive
+        }
     }
 }

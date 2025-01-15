@@ -25,7 +25,7 @@ class CryptoListVC: UIViewController {
     }
 
     private func setupUI() {
-        title = "Crypto Coins"
+        title = "COIN"
         view.backgroundColor = .white
 
         // Setup TableView
@@ -33,6 +33,7 @@ class CryptoListVC: UIViewController {
         tableView.dataSource = self
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.showsVerticalScrollIndicator = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -109,8 +110,8 @@ extension CryptoListVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CryptoCoinTVCell.reuseIdentifier, for: indexPath) as? CryptoCoinTVCell else {
             return UITableViewCell()
         }
-        let coin = viewModel.filteredCryptoCoins[indexPath.row]
-        cell.configure(with: coin)
+        let cryptoCoin = viewModel.filteredCryptoCoins[indexPath.row]
+        cell.configure(with: cryptoCoin)
         return cell
     }
 }
