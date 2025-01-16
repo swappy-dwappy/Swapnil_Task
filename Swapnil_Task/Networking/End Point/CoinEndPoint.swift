@@ -15,7 +15,7 @@ extension CoinApi: EndPointType {
     
     var environmentBaseURL: String {
         switch NetworkManager.environment {
-        case .qa: return "https://37656be98b8f42ae8348e4da3ee3193f.api.mockbin.i"
+        case .qa: return "https://37656be98b8f42ae8348e4da3ee3193f.api.mockbin.io"
         case .staging: return "https://37656be98b8f42ae8348e4da3ee3193f.api.mockbin.io"
         case .production: return "https://37656be98b8f42ae8348e4da3ee3193f.api.mockbin.io"
         }
