@@ -175,6 +175,21 @@ class CryptoListVC: UIViewController {
         button.backgroundColor = .systemGray6
         button.isSelected = false
     }
+    
+    private func showErrorAlert(error: Error) {
+        let alertController = UIAlertController(title: "Error", message: "Failed to load data.", preferredStyle: .alert)
+
+        let retryAction = UIAlertAction(title: "Retry", style: .default) { [unowned self] _ in
+            input.send(.viewDidAppear)
+        }
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+        }
+
+        alertController.addAction(retryAction)
+        alertController.addAction(okAction)
+
+        present(alertController, animated: true, completion: nil)
+    }
 }
 
 //MARK: Binding
@@ -188,7 +203,7 @@ extension CryptoListVC {
                 switch output {
                 case .fetchCoinsFailed(let error):
                     // Throw Alert with error.localizedDescription
-                    print(error.localizedDescription)
+                    self?.showErrorAlert(error: error)
                     break
                     
                 case .fetchCoinsSuceeded:
