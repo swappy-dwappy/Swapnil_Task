@@ -164,7 +164,6 @@
 				0A9D7F6C2D38CCE400098730 /* CryptoListDataFetcher.swift */,
 				0A9D7F3C2D35EB4300098730 /* Networking */,
 				0A9D7F682D38C18800098730 /* Database */,
-				0A9D7F632D370E4D00098730 /* Utility */,
 				0A9D7EF32D3218D900098730 /* Assets.xcassets */,
 				0A9D7EF52D3218D900098730 /* LaunchScreen.storyboard */,
 				0A9D7EF82D3218D900098730 /* Info.plist */,
@@ -283,13 +282,6 @@
 				0A9D7F5C2D36223D00098730 /* CryptoCoinsServiceType.swift */,
 			);
 			path = "Coins Service";
-			sourceTree = "<group>";
-		};
-		0A9D7F632D370E4D00098730 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utility;
 			sourceTree = "<group>";
 		};
 		0A9D7F682D38C18800098730 /* Database */ = {
