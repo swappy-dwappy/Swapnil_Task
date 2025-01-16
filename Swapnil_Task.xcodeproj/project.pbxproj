@@ -50,6 +50,12 @@
 		0A9D7F5B2D36210E00098730 /* CryptoCoinsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F592D36210E00098730 /* CryptoCoinsService.swift */; };
 		0A9D7F5D2D36223D00098730 /* CryptoCoinsServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F5C2D36223D00098730 /* CryptoCoinsServiceType.swift */; };
 		0A9D7F5E2D36223D00098730 /* CryptoCoinsServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F5C2D36223D00098730 /* CryptoCoinsServiceType.swift */; };
+		0A9D7F662D38C17200098730 /* Swapnil_Task_DB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F642D38C17200098730 /* Swapnil_Task_DB.xcdatamodeld */; };
+		0A9D7F672D38C17200098730 /* Swapnil_Task_DB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F642D38C17200098730 /* Swapnil_Task_DB.xcdatamodeld */; };
+		0A9D7F6A2D38C1BA00098730 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F692D38C1BA00098730 /* PersistenceController.swift */; };
+		0A9D7F6B2D38C1BA00098730 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F692D38C1BA00098730 /* PersistenceController.swift */; };
+		0A9D7F6D2D38CCE400098730 /* CryptoListDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F6C2D38CCE400098730 /* CryptoListDataFetcher.swift */; };
+		0A9D7F6E2D38CCE400098730 /* CryptoListDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F6C2D38CCE400098730 /* CryptoListDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +105,9 @@
 		0A9D7F3A2D35EB4300098730 /* RouterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterType.swift; sourceTree = "<group>"; };
 		0A9D7F592D36210E00098730 /* CryptoCoinsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCoinsService.swift; sourceTree = "<group>"; };
 		0A9D7F5C2D36223D00098730 /* CryptoCoinsServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCoinsServiceType.swift; sourceTree = "<group>"; };
+		0A9D7F652D38C17200098730 /* Swapnil_Task_DB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Swapnil_Task_DB.xcdatamodel; sourceTree = "<group>"; };
+		0A9D7F692D38C1BA00098730 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		0A9D7F6C2D38CCE400098730 /* CryptoListDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +161,9 @@
 				0A9D7EEA2D3218D700098730 /* AppDelegate.swift */,
 				0A9D7EEC2D3218D700098730 /* SceneDelegate.swift */,
 				0A9D7F232D33E18800098730 /* Crypto List */,
+				0A9D7F6C2D38CCE400098730 /* CryptoListDataFetcher.swift */,
 				0A9D7F3C2D35EB4300098730 /* Networking */,
+				0A9D7F682D38C18800098730 /* Database */,
 				0A9D7F632D370E4D00098730 /* Utility */,
 				0A9D7EF32D3218D900098730 /* Assets.xcassets */,
 				0A9D7EF52D3218D900098730 /* LaunchScreen.storyboard */,
@@ -279,6 +290,15 @@
 			children = (
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		0A9D7F682D38C18800098730 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7F642D38C17200098730 /* Swapnil_Task_DB.xcdatamodeld */,
+				0A9D7F692D38C1BA00098730 /* PersistenceController.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,12 +440,15 @@
 				0A9D7F432D35EB4300098730 /* ParameterEncoding.swift in Sources */,
 				0A9D7F3F2D35EB4300098730 /* NetworkError.swift in Sources */,
 				0A9D7F5D2D36223D00098730 /* CryptoCoinsServiceType.swift in Sources */,
+				0A9D7F6D2D38CCE400098730 /* CryptoListDataFetcher.swift in Sources */,
 				0A9D7F552D35EB4300098730 /* Router.swift in Sources */,
 				0A9D7EEB2D3218D700098730 /* AppDelegate.swift in Sources */,
 				0A9D7F202D33E17700098730 /* CryptoListVM.swift in Sources */,
 				0A9D7EED2D3218D700098730 /* SceneDelegate.swift in Sources */,
 				0A9D7F252D33E28600098730 /* CryptoCoinTVCell.swift in Sources */,
 				0A9D7F3D2D35EB4300098730 /* JSONParameterEncoder.swift in Sources */,
+				0A9D7F6A2D38C1BA00098730 /* PersistenceController.swift in Sources */,
+				0A9D7F662D38C17200098730 /* Swapnil_Task_DB.xcdatamodeld in Sources */,
 				0A9D7F532D35EB4300098730 /* HTTPTask.swift in Sources */,
 				0A9D7F512D35EB4300098730 /* HTTPMethod.swift in Sources */,
 				0A9D7F4B2D35EB4300098730 /* NetworkManager.swift in Sources */,
@@ -447,11 +470,14 @@
 				0A9D7F4C2D35EB4300098730 /* NetworkManager.swift in Sources */,
 				0A9D7F402D35EB4300098730 /* NetworkError.swift in Sources */,
 				0A9D7F262D33E28600098730 /* CryptoCoinTVCell.swift in Sources */,
+				0A9D7F672D38C17200098730 /* Swapnil_Task_DB.xcdatamodeld in Sources */,
 				0A9D7F3E2D35EB4300098730 /* JSONParameterEncoder.swift in Sources */,
 				0A9D7F502D35EB4300098730 /* EndPointType.swift in Sources */,
+				0A9D7F6E2D38CCE400098730 /* CryptoListDataFetcher.swift in Sources */,
 				0A9D7F482D35EB4300098730 /* CoinEndPoint.swift in Sources */,
 				0A9D7F5E2D36223D00098730 /* CryptoCoinsServiceType.swift in Sources */,
 				0A9D7F212D33E17700098730 /* CryptoListVM.swift in Sources */,
+				0A9D7F6B2D38C1BA00098730 /* PersistenceController.swift in Sources */,
 				0A9D7F522D35EB4300098730 /* HTTPMethod.swift in Sources */,
 				0A9D7F1C2D33E13200098730 /* CryptoCoin.swift in Sources */,
 				0A9D7F462D35EB4300098730 /* URLParameterEncoder.swift in Sources */,
@@ -787,6 +813,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0A9D7F642D38C17200098730 /* Swapnil_Task_DB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0A9D7F652D38C17200098730 /* Swapnil_Task_DB.xcdatamodel */,
+			);
+			currentVersion = 0A9D7F652D38C17200098730 /* Swapnil_Task_DB.xcdatamodel */;
+			path = Swapnil_Task_DB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0A9D7EDF2D3218D700098730 /* Project object */;
 }
