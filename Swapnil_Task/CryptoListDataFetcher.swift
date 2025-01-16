@@ -37,7 +37,7 @@ class CryptoListDataFetcher: CryptoCoinsServiceType {
         switch result {
         case .success(let cryptoCoins):
             do {
-                try await saveCryptoCoinsToCoreData(cryptoCoins)
+                try saveCryptoCoinsToCoreData(cryptoCoins)
             } catch {
                 print("Error Saving in Core Data: \(error)")
             }
@@ -48,7 +48,6 @@ class CryptoListDataFetcher: CryptoCoinsServiceType {
         return result
     }
     
-    @MainActor
     private func saveCryptoCoinsToCoreData(_ cryptoCoins: [CryptoCoin]) throws {
         let context = PersistenceController.shared.context
         cryptoCoins.forEach { cryptoCoin in

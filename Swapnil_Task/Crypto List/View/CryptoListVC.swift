@@ -16,6 +16,7 @@ class CryptoListVC: UIViewController {
     
     private let tableView = UITableView()
     private let searchController = UISearchController(searchResultsController: nil)
+    private let spinner = UIActivityIndicatorView(style: .large)
     private let filterSheetView = UIView()
     private let refreshControl = UIRefreshControl()
     private var filterButtons = [UIButton]()
@@ -33,6 +34,7 @@ class CryptoListVC: UIViewController {
         super.viewDidLoad()
         setupUI()
         bind()
+        spinner.startAnimating()
         input.send(.viewDidAppear)
     }
 
@@ -52,6 +54,14 @@ class CryptoListVC: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
 
+        spinner.hidesWhenStopped = true
+        view.addSubview(spinner)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Coins"
@@ -180,6 +190,7 @@ class CryptoListVC: UIViewController {
         let alertController = UIAlertController(title: "Error", message: "Failed to load data.", preferredStyle: .alert)
 
         let retryAction = UIAlertAction(title: "Retry", style: .default) { [unowned self] _ in
+            spinner.startAnimating()
             input.send(.viewDidAppear)
         }
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
@@ -204,16 +215,17 @@ extension CryptoListVC {
                 case .fetchCoinsFailed(let error):
                     // Throw Alert with error.localizedDescription
                     self?.showErrorAlert(error: error)
+                    self?.spinner.stopAnimating()
                     break
                     
                 case .fetchCoinsSuceeded:
                     self?.tableView.reloadData()
                     self?.refreshControl.endRefreshing()
+                    self?.spinner.stopAnimating()
                     self?.resetFilterButtons()
                     
                 case .appliedFilters, .filteredSearch:
                     self?.tableView.reloadData()
-                    self?.refreshControl.endRefreshing()
                 }
             }
             .store(in: &cancellables)
