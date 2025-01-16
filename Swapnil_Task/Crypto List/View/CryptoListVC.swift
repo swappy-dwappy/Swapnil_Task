@@ -89,7 +89,6 @@ class CryptoListVC: UIViewController {
         }
 
         let buttonHeight: CGFloat = 40
-        let buttonSpacing: CGFloat = 8
         let buttonPadding: CGFloat = 16
 
         // Top row: 2 buttons
@@ -99,24 +98,22 @@ class CryptoListVC: UIViewController {
             activeButton.heightAnchor.constraint(equalToConstant: buttonHeight),
 
             inactiveButton.topAnchor.constraint(equalTo: activeButton.topAnchor),
-            inactiveButton.leadingAnchor.constraint(equalTo: activeButton.trailingAnchor, constant: buttonSpacing),
+            inactiveButton.leadingAnchor.constraint(equalTo: activeButton.trailingAnchor, constant: buttonPadding),
             inactiveButton.heightAnchor.constraint(equalToConstant: buttonHeight),
         ])
 
         // Second row: 3 buttons
         NSLayoutConstraint.activate([
-            tokensButton.topAnchor.constraint(equalTo: activeButton.bottomAnchor, constant: buttonSpacing),
-            tokensButton.leadingAnchor.constraint(equalTo: filterSheetView.leadingAnchor, constant: buttonSpacing),
+            tokensButton.topAnchor.constraint(equalTo: activeButton.bottomAnchor, constant: buttonPadding),
+            tokensButton.leadingAnchor.constraint(equalTo: filterSheetView.leadingAnchor, constant: buttonPadding),
             tokensButton.heightAnchor.constraint(equalToConstant: buttonHeight),
             
             coinsButton.topAnchor.constraint(equalTo: tokensButton.topAnchor),
             coinsButton.leadingAnchor.constraint(equalTo: tokensButton.trailingAnchor, constant: buttonPadding),
-            coinsButton.trailingAnchor.constraint(lessThanOrEqualTo: filterSheetView.trailingAnchor, constant: -buttonPadding),
             coinsButton.heightAnchor.constraint(equalToConstant: buttonHeight),
 
             newCoinsButton.topAnchor.constraint(equalTo: coinsButton.topAnchor),
-            newCoinsButton.leadingAnchor.constraint(equalTo: coinsButton.trailingAnchor, constant: buttonSpacing),
-            newCoinsButton.trailingAnchor.constraint(lessThanOrEqualTo: filterSheetView.trailingAnchor, constant: -buttonPadding),
+            newCoinsButton.leadingAnchor.constraint(equalTo: coinsButton.trailingAnchor, constant: buttonPadding),
             newCoinsButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ])
     }
@@ -139,7 +136,8 @@ class CryptoListVC: UIViewController {
         guard let title = sender.title(for: .normal) else { return }
         sender.isSelected.toggle()
         sender.backgroundColor = sender.isSelected ? .black : .systemGray6
-
+        searchController.isActive = false
+        
         switch title {
         case "Active Coins":
             self.input.send(.applyFilters(isActiveCoins: !viewModel.filterButtons.activeCoins, isInactiveCoins: nil, isOnlyTokens: nil, isOnlyCoins: nil, isNewCoins: nil))
@@ -184,12 +182,12 @@ extension CryptoListVC {
                     print(error.localizedDescription)
                     break
                     
-                case .fetchCoinsSuceeded, .filteredSearch:
+                case .fetchCoinsSuceeded:
                     self?.tableView.reloadData()
                     self?.refreshControl.endRefreshing()
                     self?.resetFilterButtons()
                     
-                case .appliedFilters:
+                case .appliedFilters, .filteredSearch:
                     self?.tableView.reloadData()
                     self?.refreshControl.endRefreshing()
                 }
