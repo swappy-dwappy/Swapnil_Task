@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 class CryptoListVM {
-    private var allCryptoCoins: [CryptoCoin] = []
+    private(set) var allCryptoCoins: [CryptoCoin] = []
     private(set) var filteredCryptoCoins: [CryptoCoin] = []
     private(set) var searchedCryptoCoins: [CryptoCoin] = []
     var filterButtons: FilterButtons = FilterButtons()
@@ -116,7 +116,7 @@ extension CryptoListVM {
         }
     }
     
-    private func reset(with coins: [CryptoCoin]) {
+    fileprivate func reset(with coins: [CryptoCoin]) {
         self.allCryptoCoins = coins
         self.filteredCryptoCoins = coins
         self.searchedCryptoCoins = coins
@@ -170,5 +170,44 @@ extension CryptoListVM {
         searchedCryptoCoins = filteredCryptoCoins
 
         output.send(.appliedFilters)
+    }
+}
+
+// Unit Test
+extension CryptoListVM {
+    struct TestHooks {
+        let viewModel: CryptoListVM
+        
+        var allCryptoCoins: [CryptoCoin] {
+            viewModel.allCryptoCoins
+        }
+        
+        var filteredCryptoCoins: [CryptoCoin] {
+            viewModel.filteredCryptoCoins
+        }
+        
+        var searchedCryptoCoins: [CryptoCoin] {
+            viewModel.searchedCryptoCoins
+        }
+        
+        var filterButtons: FilterButtons {
+            viewModel.filterButtons
+        }
+        
+        func reset(with coins: [CryptoCoin]) {
+            viewModel.reset(with: coins)
+        }
+        
+        func applyFilters(isActiveCoins: Bool?, isInactiveCoins: Bool?, isOnlyTokens: Bool?, isOnlyCoins: Bool?, isNewCoins: Bool?) {
+            viewModel.applyFilters(isActiveCoins: isActiveCoins, isInactiveCoins: isInactiveCoins, isOnlyTokens: isOnlyTokens, isOnlyCoins: isOnlyCoins, isNewCoins: isNewCoins)
+        }
+        
+        func search(by query: String) {
+            viewModel.search(by: query)
+        }
+    }
+    
+    var testHooks: TestHooks {
+        TestHooks(viewModel: self)
     }
 }

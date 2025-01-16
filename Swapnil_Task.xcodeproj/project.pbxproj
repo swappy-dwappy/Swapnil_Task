@@ -11,7 +11,7 @@
 		0A9D7EED2D3218D700098730 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7EEC2D3218D700098730 /* SceneDelegate.swift */; };
 		0A9D7EF42D3218D900098730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7EF32D3218D900098730 /* Assets.xcassets */; };
 		0A9D7EF72D3218D900098730 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7EF62D3218D900098730 /* Base */; };
-		0A9D7F022D3218D900098730 /* Swapnil_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F012D3218D900098730 /* Swapnil_TaskTests.swift */; };
+		0A9D7F022D3218D900098730 /* CryptoListVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F012D3218D900098730 /* CryptoListVMTests.swift */; };
 		0A9D7F0C2D3218D900098730 /* Swapnil_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F0B2D3218D900098730 /* Swapnil_TaskUITests.swift */; };
 		0A9D7F0E2D3218D900098730 /* Swapnil_TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F0D2D3218D900098730 /* Swapnil_TaskUITestsLaunchTests.swift */; };
 		0A9D7F1B2D33E13200098730 /* CryptoCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F1A2D33E13200098730 /* CryptoCoin.swift */; };
@@ -56,6 +56,8 @@
 		0A9D7F6B2D38C1BA00098730 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F692D38C1BA00098730 /* PersistenceController.swift */; };
 		0A9D7F6D2D38CCE400098730 /* CryptoListDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F6C2D38CCE400098730 /* CryptoListDataFetcher.swift */; };
 		0A9D7F6E2D38CCE400098730 /* CryptoListDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7F6C2D38CCE400098730 /* CryptoListDataFetcher.swift */; };
+		0AB929782D399A000007A093 /* MockCryptoCoinsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB929772D399A000007A093 /* MockCryptoCoinsService.swift */; };
+		0AB929792D399A000007A093 /* MockCryptoCoinsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB929772D399A000007A093 /* MockCryptoCoinsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +85,7 @@
 		0A9D7EF62D3218D900098730 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9D7EF82D3218D900098730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A9D7EFD2D3218D900098730 /* Swapnil_TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swapnil_TaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A9D7F012D3218D900098730 /* Swapnil_TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swapnil_TaskTests.swift; sourceTree = "<group>"; };
+		0A9D7F012D3218D900098730 /* CryptoListVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListVMTests.swift; sourceTree = "<group>"; };
 		0A9D7F072D3218D900098730 /* Swapnil_TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swapnil_TaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9D7F0B2D3218D900098730 /* Swapnil_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swapnil_TaskUITests.swift; sourceTree = "<group>"; };
 		0A9D7F0D2D3218D900098730 /* Swapnil_TaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swapnil_TaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		0A9D7F652D38C17200098730 /* Swapnil_Task_DB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Swapnil_Task_DB.xcdatamodel; sourceTree = "<group>"; };
 		0A9D7F692D38C1BA00098730 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		0A9D7F6C2D38CCE400098730 /* CryptoListDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListDataFetcher.swift; sourceTree = "<group>"; };
+		0AB929772D399A000007A093 /* MockCryptoCoinsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCryptoCoinsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +177,7 @@
 		0A9D7F002D3218D900098730 /* Swapnil_TaskTests */ = {
 			isa = PBXGroup;
 			children = (
-				0A9D7F012D3218D900098730 /* Swapnil_TaskTests.swift */,
+				0A9D7F012D3218D900098730 /* CryptoListVMTests.swift */,
 			);
 			path = Swapnil_TaskTests;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				0A9D7F592D36210E00098730 /* CryptoCoinsService.swift */,
+				0AB929772D399A000007A093 /* MockCryptoCoinsService.swift */,
 				0A9D7F5C2D36223D00098730 /* CryptoCoinsServiceType.swift */,
 			);
 			path = "Coins Service";
@@ -430,6 +434,7 @@
 				0A9D7F452D35EB4300098730 /* URLParameterEncoder.swift in Sources */,
 				0A9D7F412D35EB4300098730 /* ParameterEncoderType.swift in Sources */,
 				0A9D7F432D35EB4300098730 /* ParameterEncoding.swift in Sources */,
+				0AB929782D399A000007A093 /* MockCryptoCoinsService.swift in Sources */,
 				0A9D7F3F2D35EB4300098730 /* NetworkError.swift in Sources */,
 				0A9D7F5D2D36223D00098730 /* CryptoCoinsServiceType.swift in Sources */,
 				0A9D7F6D2D38CCE400098730 /* CryptoListDataFetcher.swift in Sources */,
@@ -457,8 +462,9 @@
 				0A9D7F442D35EB4300098730 /* ParameterEncoding.swift in Sources */,
 				0A9D7F422D35EB4300098730 /* ParameterEncoderType.swift in Sources */,
 				0A9D7F582D35EB4300098730 /* RouterType.swift in Sources */,
-				0A9D7F022D3218D900098730 /* Swapnil_TaskTests.swift in Sources */,
+				0A9D7F022D3218D900098730 /* CryptoListVMTests.swift in Sources */,
 				0A9D7F562D35EB4300098730 /* Router.swift in Sources */,
+				0AB929792D399A000007A093 /* MockCryptoCoinsService.swift in Sources */,
 				0A9D7F4C2D35EB4300098730 /* NetworkManager.swift in Sources */,
 				0A9D7F402D35EB4300098730 /* NetworkError.swift in Sources */,
 				0A9D7F262D33E28600098730 /* CryptoCoinTVCell.swift in Sources */,

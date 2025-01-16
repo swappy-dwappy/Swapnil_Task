@@ -14,7 +14,7 @@ class CryptoCoinTVCell: UITableViewCell {
     private let nameLabel = UILabel()
     private let symbolLabel = UILabel()
     private let typeImageView = UIImageView()
-    private let typeIsNewImageView = UIImageView(image: .new)
+    private let typeIsNewImageView = UIImageView(image: UIImage(named: "New"))
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -31,7 +31,7 @@ class CryptoCoinTVCell: UITableViewCell {
         nameLabel.font = .systemFont(ofSize: 16)
         symbolLabel.font = .boldSystemFont(ofSize: 16)
         typeImageView.contentMode = .scaleAspectFit
-        typeIsNewImageView.contentMode = .scaleAspectFit
+        typeIsNewImageView.contentMode = ContentMode.scaleAspectFit
         
         contentView.addSubview(nameLabel)
         contentView.addSubview(symbolLabel)
@@ -72,11 +72,11 @@ class CryptoCoinTVCell: UITableViewCell {
     
     private func setTypeImageView(_ cryptoCoin: CryptoCoin) {
         if cryptoCoin.type == .coin, cryptoCoin.isActive {
-            typeImageView.image = .activeCoin
+            typeImageView.image = UIImage(named: "Active_Coin")
         } else if cryptoCoin.type == .token, cryptoCoin.isActive {
-            typeImageView.image = .activeToken
+            typeImageView.image = UIImage(named: "Active_Token")
         } else if cryptoCoin.isActive == false {
-            typeImageView.image = .inactive
+            typeImageView.image = UIImage(named: "Inactive")
         }
     }
 }

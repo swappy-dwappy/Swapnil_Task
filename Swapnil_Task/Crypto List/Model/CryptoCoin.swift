@@ -12,7 +12,7 @@ enum CoinType: String, Codable {
     case coin
 }
 
-struct CryptoCoin: Codable {
+struct CryptoCoin: Codable, Equatable {
     let name: String
     let symbol: String
     let type: CoinType
