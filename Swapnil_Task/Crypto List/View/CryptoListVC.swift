@@ -59,8 +59,7 @@ class CryptoListVC: UIViewController {
     }
     
     private func setupFilterSheet() {
-        filterSheetView.backgroundColor = .lightGray
-        filterSheetView.layer.cornerRadius = 16
+        filterSheetView.backgroundColor = .systemGray3
         filterSheetView.layer.shadowColor = UIColor.black.cgColor
         filterSheetView.layer.shadowOpacity = 0.1
         filterSheetView.layer.shadowOffset = CGSize(width: 0, height: -2)
@@ -146,7 +145,7 @@ class CryptoListVC: UIViewController {
         case "Only Coins":
             self.input.send(.applyFilters(isActiveCoins: nil, isInactiveCoins: nil, isOnlyTokens: nil, isOnlyCoins: !viewModel.filterButtons.onlyCoins, isNewCoins: nil))
         case "New Coins":
-            self.input.send(.applyFilters(isActiveCoins: true, isInactiveCoins: nil, isOnlyTokens: nil, isOnlyCoins: nil, isNewCoins: !viewModel.filterButtons.newCoins))
+            self.input.send(.applyFilters(isActiveCoins: nil, isInactiveCoins: nil, isOnlyTokens: nil, isOnlyCoins: nil, isNewCoins: !viewModel.filterButtons.newCoins))
         default:
             break
         }
