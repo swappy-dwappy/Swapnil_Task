@@ -81,8 +81,11 @@ extension CryptoListVM {
     func transform(input: AnyPublisher<Input, Never>) -> AnyPublisher<Output, Never> {
         input.sink { [weak self] input in
             switch input {
-            case .viewDidAppear, .pullToRefresh:
-                self?.handleGetCryptoCoins()
+            case .viewDidAppear:
+                self?.handleGetCryptoCoins(serviceType: self!.cyrptoCoinsServiceType)
+                
+            case .pullToRefresh:
+                self?.handleGetCryptoCoins(serviceType: CryptoCoinsService())
                 
             case .filterSearch(let searchText):
                 self?.search(by: searchText)
@@ -99,9 +102,9 @@ extension CryptoListVM {
 
 extension CryptoListVM {
     
-    private func handleGetCryptoCoins() {
+    private func handleGetCryptoCoins(serviceType: CryptoCoinsServiceType) {
         Task {
-            switch await cyrptoCoinsServiceType.getCoins() {
+            switch await serviceType.getCoins() {
             case .success(let coins):
                 reset(with: coins)
                 output.send(.fetchCoinsSuceeded)
