@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let viewController = CryptoListVC()
+        let viewController = CryptoListVC(viewModel: CryptoListVM(cyrptoCoinsServiceType: CryptoListDataFetcher()))
         let navigation = UINavigationController(rootViewController: viewController)
         
         window.rootViewController = navigation

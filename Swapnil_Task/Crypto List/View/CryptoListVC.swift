@@ -10,7 +10,7 @@ import UIKit
 
 class CryptoListVC: UIViewController {
 
-    private let viewModel = CryptoListVM()
+    private var viewModel: CryptoListVM!
     var input: PassthroughSubject<CryptoListVM.Input, Never> = .init()
     var cancellables = Set<AnyCancellable>()
     
@@ -19,6 +19,15 @@ class CryptoListVC: UIViewController {
     private let filterSheetView = UIView()
     private let refreshControl = UIRefreshControl()
     private var filterButtons = [UIButton]()
+    
+    init(viewModel: CryptoListVM) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
